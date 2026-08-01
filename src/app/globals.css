@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #14110d;
+  --ink-soft: #1b160f;
+  --surface: #201a13;
+  --surface-hover: #291f15;
+  --border: #3a2f20;
+  --border-soft: #2a2318;
+  --cream: #f3ecdd;
+  --muted: #a9987e;
+  --gold: #c9a455;
+  --gold-light: #e6cb8a;
+  --gold-dark: #8c6d2f;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-border-soft: var(--border-soft);
+  --color-cream: var(--cream);
+  --color-muted: var(--muted);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-khmer: var(--font-khmer);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--font-body), var(--font-khmer), sans-serif;
+}
+
+.font-heading {
+  font-family: var(--font-heading), var(--font-khmer), serif;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--ink);
+}
+
+/* thin gold scrollbar for a slightly more designed feel */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out both;
+}
