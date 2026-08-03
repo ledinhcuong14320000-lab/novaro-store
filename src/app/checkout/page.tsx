@@ -7,6 +7,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 import { useCart } from "@/cart/CartContext";
 import { formatUSD } from "@/lib/format";
 import { ProductArt } from "@/components/ProductArt";
+import { AbaPaywayPanel } from "@/components/checkout/AbaPaywayPanel";
 import type { CategoryId } from "@/lib/products";
 
 const PROVINCES: { en: string; km: string }[] = [
@@ -64,6 +65,7 @@ export default function CheckoutPage() {
   });
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [orderNumber, setOrderNumber] = useState<string | null>(null);
+  const [pendingAbaOrder, setPendingAbaOrder] = useState<string | null>(null);
 
   const shipping = subtotal >= 50 ? 0 : 3;
   const total = subtotal + shipping;
@@ -87,6 +89,10 @@ export default function CheckoutPage() {
     e.preventDefault();
     if (!validate()) return;
     const number = generateOrderNumber();
+    if (form.payment === "aba") {
+      setPendingAbaOrder(number);
+      return;
+    }
     setOrderNumber(number);
     clearCart();
   };
@@ -136,6 +142,22 @@ export default function CheckoutPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
       <h1 className="font-heading text-4xl text-cream mb-10">{t("checkout.title")}</h1>
+
+      {pendingAbaOrder && (
+        <AbaPaywayPanel
+          orderNumber={pendingAbaOrder}
+          amount={total}
+          fullName={form.fullName}
+          phone={form.phone}
+          email={form.email || undefined}
+          onSuccess={() => {
+            setOrderNumber(pendingAbaOrder);
+            clearCart();
+            setPendingAbaOrder(null);
+          }}
+          onCancel={() => setPendingAbaOrder(null)}
+        />
+      )}
 
       <form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-3 gap-10">
         <div className="lg:col-span-2 space-y-10">

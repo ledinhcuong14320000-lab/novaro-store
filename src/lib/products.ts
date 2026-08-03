@@ -75,7 +75,8 @@ export const products: Product[] = [
       km: "អាវប៉ូឡូបីកេ ដកដង្ហើមស្រួល មានគែមកអាវពណ៌សំរិទ្ធមាសបន្តិចបន្តួច សមទាំងធ្វើការ និងចុងសប្តាហ៍។",
     },
     care: { en: "Cotton-pique blend. Machine wash cold, do not bleach.", km: "កប្បាសបីកេលាយ។ លាងទឹកត្រជាក់ កុំប្រើសារធាតុបំបាត់ពណ៌។" },
-    price: 28,
+    price: 17,
+    compareAtPrice: 28,
     sizes: ["S", "M", "L", "XL"],
     colors: [
       { name: { en: "Warm Charcoal", km: "ធ្យូងក្តៅ" }, hex: "#2b241b" },
@@ -96,7 +97,8 @@ export const products: Product[] = [
       km: "អាវយឺតកប្បាសក្រាស់ គុណភាពខ្ពស់ ទម្រង់ទំនើប មានស្លាកអក្សរ NOVARO ត្បាញនៅជាយអាវ។",
     },
     care: { en: "100% combed cotton. Wash inside out in cold water.", km: "កប្បាសពិសេស ១០០%។ ត្រឡប់អាវផ្នែកក្នុងចេញក្រៅ លាងទឹកត្រជាក់។" },
-    price: 19,
+    price: 17,
+    compareAtPrice: 19,
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: { en: "Ink Black", km: "ខ្មៅទឹកខ្មៅ" }, hex: "#14110d" },
@@ -283,7 +285,8 @@ export const products: Product[] = [
       km: "អាវប៉ូឡូត្បាញខ្សែ មានវាយនភាព បំពាក់ដោយហ្ស៊ីបពាក់កណ្តាលដ៏ទាន់សម័យ — សមទាំងធ្វើការ និងថ្ងៃចុងសប្តាហ៍។",
     },
     care: { en: "Knit blend. Hand wash cold, dry flat.", km: "អុសលាយ។ លាងដៃទឹកត្រជាក់ ព្យួរស្ងួតលើផ្ទៃរាបស្មើ។" },
-    price: 33,
+    price: 17,
+    compareAtPrice: 33,
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: { en: "Storm Grey", km: "ប្រផេះព្យុះ" }, hex: "#8a8681" },
@@ -312,7 +315,8 @@ export const products: Product[] = [
       km: "អាវប៉ូឡូត្បាញខ្សែ ជាមួយកអាវ និងចុងដៃពណ៌ផ្ទុយគ្នា — សមស្រាប់ពាក់ត្រង់ក្នុងល្ងាចត្រជាក់។",
     },
     care: { en: "Knit blend. Hand wash cold, dry flat.", km: "អុសលាយ។ លាងដៃទឹកត្រជាក់ ព្យួរស្ងួតលើផ្ទៃរាបស្មើ។" },
-    price: 34,
+    price: 17,
+    compareAtPrice: 34,
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: { en: "Ocean Blue", km: "ខៀវសមុទ្រ" }, hex: "#3a5a78" },
@@ -339,7 +343,8 @@ export const products: Product[] = [
       km: "អាវប៉ូឡូរចនាបថកីឡា មានខ្សែក្រវាត់ពណ៌សំរិទ្ធមាសដ៏លេចធ្លោនៅទ្រូង — ស័ក្តិសមទាំងលំហាត់ប្រាណ និងចេញក្រៅ។",
     },
     care: { en: "Cotton-poly blend. Machine wash cold.", km: "កប្បាសលាយប៉ូលីស្ទើរ។ លាងម៉ាស៊ីនទឹកត្រជាក់។" },
-    price: 30,
+    price: 17,
+    compareAtPrice: 30,
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: { en: "Onyx Black", km: "ខ្មៅអូនិច" }, hex: "#17140f" },
@@ -395,7 +400,8 @@ export const products: Product[] = [
       km: "អាវប៉ូឡូត្បាញរាងសំបុកឃ្មុំ ដកដង្ហើមស្រួល កអាវរឹងបន្តិច — ជម្រើសថ្មីក្រៅពីអាវប៉ូឡូបីកេធម្មតា។",
     },
     care: { en: "Cotton blend. Machine wash cold, do not tumble dry.", km: "កប្បាសលាយ។ លាងម៉ាស៊ីនទឹកត្រជាក់ កុំបង្ហោចក្តៅ។" },
-    price: 31,
+    price: 17,
+    compareAtPrice: 31,
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: { en: "Storm Grey", km: "ប្រផេះព្យុះ" }, hex: "#8f8d89" },
@@ -451,7 +457,8 @@ export const products: Product[] = [
       km: "អាវប៉ូឡូត្បាញបន្ទាត់ស្តើង មានប៊ូតុងកអាវរឹងបន្តិច — សមស្រាប់ការិយាល័យ និងកន្លែងធ្វើការសម័យទំនើប។",
     },
     care: { en: "Cotton blend. Machine wash cold, iron on low heat.", km: "កប្បាសលាយ។ លាងម៉ាស៊ីនទឹកត្រជាក់ អ៊ុតកម្តៅទាប។" },
-    price: 29,
+    price: 17,
+    compareAtPrice: 29,
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: { en: "Umber Brown", km: "ត្នោតចាស់" }, hex: "#4d3c2c" },
@@ -478,7 +485,8 @@ export const products: Product[] = [
       km: "អាវប៉ូឡូត្បាញខ្សែបន្ទាត់រ៉ាបប៊ីដ៏លេចធ្លោ កអាវមានជ្រូង — រចនាបថកីឡាបុរាណ ជាមួយសម្ភារៈគុណភាពខ្ពស់។",
     },
     care: { en: "Cotton blend. Machine wash cold, do not bleach.", km: "កប្បាសលាយ។ លាងម៉ាស៊ីនទឹកត្រជាក់ កុំប្រើសារធាតុបំបាត់ពណ៌។" },
-    price: 36,
+    price: 17,
+    compareAtPrice: 36,
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: { en: "Onyx Black", km: "ខ្មៅអូនិច" }, hex: "#171512" },
@@ -506,7 +514,8 @@ export const products: Product[] = [
       km: "អាវប៉ូឡូចាំបាច់ប្រចាំថ្ងៃ ធ្វើពីកប្បាសលាយទន់ ទម្រង់សម ស័ក្តិសមសម្រាប់ពាក់រាល់ថ្ងៃ។",
     },
     care: { en: "Cotton blend. Machine wash cold.", km: "កប្បាសលាយ។ លាងម៉ាស៊ីនទឹកត្រជាក់។" },
-    price: 26,
+    price: 17,
+    compareAtPrice: 26,
     sizes: ["S", "M", "L", "XL", "XXL"],
     colors: [
       { name: { en: "Umber Brown", km: "ត្នោតចាស់" }, hex: "#4a3626" },

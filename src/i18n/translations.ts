@@ -128,6 +128,22 @@ export const dictionary: Dict = {
   "checkout.success.orderNumber": { en: "Order Number", km: "លេខការបញ្ជាទិញ" },
   "checkout.success.backHome": { en: "Back to Home", km: "ត្រឡប់ទៅទំព័រដើម" },
   "checkout.emptyRedirect": { en: "Your cart is empty. Add products before checking out.", km: "រទេះទំនិញរបស់អ្នកទទេ។ សូមបន្ថែមទំនិញមុននឹងទូទាត់។" },
+  "checkout.aba.title": { en: "ABA PAY", km: "ABA PAY" },
+  "checkout.aba.scanNotice": {
+    en: "Scan with the ABA Mobile app or any Bakong-linked banking app",
+    km: "ស្កេនដោយប្រើកម្មវិធី ABA Mobile ឬកម្មវិធីធនាគារភ្ជាប់ Bakong",
+  },
+  "checkout.aba.loading": { en: "Preparing secure payment…", km: "កំពុងរៀបចំការទូទាត់ដោយសុវត្ថិភាព…" },
+  "checkout.aba.error": { en: "Could not start ABA PAY. Please try again.", km: "មិនអាចចាប់ផ្តើម ABA PAY បានទេ។ សូមព្យាយាមម្តងទៀត។" },
+  "checkout.aba.reference": { en: "Transaction Reference", km: "លេខយោងប្រតិបត្តិការ" },
+  "checkout.aba.amountLabel": { en: "Amount to Pay", km: "ចំនួនទឹកប្រាក់ត្រូវបង់" },
+  "checkout.aba.mockNotice": {
+    en: "Sandbox preview — this QR is a placeholder. Add ABA_PAYWAY_MERCHANT_ID and ABA_PAYWAY_API_KEY to .env.local to enable real payments.",
+    km: "ការមើលជាមុនសាកល្បង — QR នេះគ្រាន់ជាគំរូប៉ុណ្ណោះ។ សូមបញ្ចូល ABA_PAYWAY_MERCHANT_ID និង ABA_PAYWAY_API_KEY ក្នុងឯកសារ .env.local ដើម្បីបើកការទូទាត់ពិត។",
+  },
+  "checkout.aba.simulateSuccess": { en: "Simulate Successful Payment", km: "សាកល្បងការទូទាត់ជោគជ័យ" },
+  "checkout.aba.redirecting": { en: "Redirecting to ABA PAY…", km: "កំពុងបញ្ជូនទៅ ABA PAY…" },
+  "checkout.aba.cancel": { en: "Cancel", km: "បោះបង់" },
 
   // Footer
   "footer.about": {
