@@ -116,7 +116,7 @@ export const dictionary: Dict = {
   "checkout.payment": { en: "Payment Method", km: "វិធីបង់ប្រាក់" },
   "checkout.payment.cod": { en: "Cash on Delivery", km: "បង់ប្រាក់ពេលទទួលទំនិញ" },
   "checkout.payment.aba": { en: "ABA PAY", km: "ABA PAY" },
-  "checkout.payment.wing": { en: "Wing Money", km: "វីង (Wing)" },
+  "checkout.payment.bankTransfer": { en: "Bank Transfer (ABA/Wing)", km: "ផ្ទេរប្រាក់ (ABA/Wing)" },
   "checkout.placeOrder": { en: "Place Order", km: "បញ្ជាទិញ" },
   "checkout.required": { en: "This field is required", km: "ត្រូវការបំពេញព័ត៌មាននេះ" },
   "checkout.phoneInvalid": { en: "Enter a valid Cambodia phone number", km: "សូមបញ្ចូលលេខទូរស័ព្ទត្រឹមត្រូវ" },
@@ -144,6 +144,25 @@ export const dictionary: Dict = {
   "checkout.aba.simulateSuccess": { en: "Simulate Successful Payment", km: "សាកល្បងការទូទាត់ជោគជ័យ" },
   "checkout.aba.redirecting": { en: "Redirecting to ABA PAY…", km: "កំពុងបញ្ជូនទៅ ABA PAY…" },
   "checkout.aba.cancel": { en: "Cancel", km: "បោះបង់" },
+  "checkout.bankTransfer.title": { en: "ABA / Wing Bank Transfer", km: "ផ្ទេរប្រាក់ ABA / Wing" },
+  "checkout.bankTransfer.notice": {
+    en: "Transfer the exact amount below, then tap \"I've Made the Transfer\". We'll confirm your order by phone.",
+    km: "សូមផ្ទេរប្រាក់ចំនួនពិតប្រាកដខាងក្រោម រួចចុច \"ខ្ញុំបានផ្ទេរប្រាក់រួចហើយ\"។ យើងនឹងទូរស័ព្ទទៅបញ្ជាក់ការបញ្ជាទិញរបស់អ្នក។",
+  },
+  "checkout.bankTransfer.amountLabel": { en: "Amount to Transfer", km: "ចំនួនទឹកប្រាក់ត្រូវផ្ទេរ" },
+  "checkout.bankTransfer.orderRefLabel": { en: "Order Code (write this in the transfer note)", km: "លេខកូដការបញ្ជាទិញ (សូមសរសេរក្នុងចំណាំផ្ទេរប្រាក់)" },
+  "checkout.bankTransfer.abaLabel": { en: "ABA Account Number", km: "លេខគណនី ABA" },
+  "checkout.bankTransfer.wingLabel": { en: "Wing Account Number", km: "លេខគណនី Wing" },
+  "checkout.bankTransfer.wingNotice": {
+    en: "Scan the ABA QR above, or transfer to the Wing number above using the Wing app.",
+    km: "ស្កេនកូដ QR ABA ខាងលើ ឬផ្ទេរប្រាក់ទៅលេខ Wing ខាងលើដោយប្រើកម្មវិធី Wing។",
+  },
+  "checkout.bankTransfer.confirm": { en: "I've Made the Transfer", km: "ខ្ញុំបានផ្ទេរប្រាក់រួចហើយ" },
+  "checkout.bankTransfer.pendingTitle": { en: "Your order is pending confirmation", km: "ការបញ្ជាទិញរបស់អ្នកកំពុងរង់ចាំការបញ្ជាក់" },
+  "checkout.bankTransfer.pendingBody": {
+    en: "Thank you! NOVARO will contact you within 24 hours at {phone} to confirm your payment and order.",
+    km: "សូមអរគុណ! NOVARO នឹងទាក់ទងអ្នកក្នុងរយៈពេល ២៤ម៉ោង តាមរយៈលេខទូរស័ព្ទ {phone} ដើម្បីបញ្ជាក់ការទូទាត់ និងការបញ្ជាទិញរបស់អ្នក។",
+  },
 
   // Footer
   "footer.about": {

@@ -8,6 +8,7 @@ import { useCart } from "@/cart/CartContext";
 import { formatUSD } from "@/lib/format";
 import { ProductArt } from "@/components/ProductArt";
 import { AbaPaywayPanel } from "@/components/checkout/AbaPaywayPanel";
+import { BankTransferPanel } from "@/components/checkout/BankTransferPanel";
 import type { CategoryId } from "@/lib/products";
 
 const PROVINCES: { en: string; km: string }[] = [
@@ -26,7 +27,7 @@ const PROVINCES: { en: string; km: string }[] = [
 const PAYMENT_METHODS = [
   { id: "cod", labelKey: "checkout.payment.cod" },
   { id: "aba", labelKey: "checkout.payment.aba" },
-  { id: "wing", labelKey: "checkout.payment.wing" },
+  { id: "bank_transfer", labelKey: "checkout.payment.bankTransfer" },
 ] as const;
 
 type FormState = {
@@ -66,6 +67,7 @@ export default function CheckoutPage() {
   const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({});
   const [orderNumber, setOrderNumber] = useState<string | null>(null);
   const [pendingAbaOrder, setPendingAbaOrder] = useState<string | null>(null);
+  const [pendingBankTransferOrder, setPendingBankTransferOrder] = useState<string | null>(null);
 
   const shipping = subtotal >= 50 ? 0 : 3;
   const total = subtotal + shipping;
@@ -93,6 +95,10 @@ export default function CheckoutPage() {
       setPendingAbaOrder(number);
       return;
     }
+    if (form.payment === "bank_transfer") {
+      setPendingBankTransferOrder(number);
+      return;
+    }
     setOrderNumber(number);
     clearCart();
   };
@@ -105,8 +111,14 @@ export default function CheckoutPage() {
             <path d="M5 12l4.5 4.5L19 7" />
           </svg>
         </div>
-        <h1 className="font-heading text-3xl text-cream">{t("checkout.success.title")}</h1>
-        <p className="text-sm text-muted mt-3 leading-relaxed">{t("checkout.success.body")}</p>
+        <h1 className="font-heading text-3xl text-cream">
+          {form.payment === "bank_transfer" ? t("checkout.bankTransfer.pendingTitle") : t("checkout.success.title")}
+        </h1>
+        <p className="text-sm text-muted mt-3 leading-relaxed">
+          {form.payment === "bank_transfer"
+            ? t("checkout.bankTransfer.pendingBody").replace("{phone}", form.phone)
+            : t("checkout.success.body")}
+        </p>
         <p className="mt-6 inline-block rounded-md border border-border bg-surface px-5 py-2.5 text-sm text-gold-light">
           {t("checkout.success.orderNumber")}: <span className="font-semibold text-gold">{orderNumber}</span>
         </p>
@@ -156,6 +168,19 @@ export default function CheckoutPage() {
             setPendingAbaOrder(null);
           }}
           onCancel={() => setPendingAbaOrder(null)}
+        />
+      )}
+
+      {pendingBankTransferOrder && (
+        <BankTransferPanel
+          orderNumber={pendingBankTransferOrder}
+          amount={total}
+          onConfirm={() => {
+            setOrderNumber(pendingBankTransferOrder);
+            clearCart();
+            setPendingBankTransferOrder(null);
+          }}
+          onCancel={() => setPendingBankTransferOrder(null)}
         />
       )}
 
