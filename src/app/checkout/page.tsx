@@ -42,6 +42,12 @@ type FormState = {
 
 const PHONE_REGEX = /^(?:\+855|0)[1-9][0-9]{6,8}$/;
 
+const PAYMENT_LABELS: Record<(typeof PAYMENT_METHODS)[number]["id"], string> = {
+  cod: "Thanh toán khi nhận hàng (COD)",
+  aba: "ABA PAY",
+  bank_transfer: "Chuyển khoản ABA/Wing",
+};
+
 function generateOrderNumber() {
   const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
   let code = "";
@@ -87,6 +93,35 @@ export default function CheckoutPage() {
     return Object.keys(next).length === 0;
   };
 
+  const notifyOrder = (orderNumberValue: string) => {
+    const payload = {
+      orderNumber: orderNumberValue,
+      fullName: form.fullName,
+      phone: form.phone,
+      email: form.email || undefined,
+      address: form.address,
+      province: form.province,
+      notes: form.notes || undefined,
+      paymentMethod: form.payment,
+      paymentLabel: PAYMENT_LABELS[form.payment],
+      items: items.map((item) => ({
+        name: item.name.en,
+        size: item.size,
+        color: item.color,
+        qty: item.qty,
+        price: item.price,
+      })),
+      subtotal,
+      shipping,
+      total,
+    };
+    fetch("/api/checkout/notify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    }).catch(() => {});
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
@@ -99,6 +134,7 @@ export default function CheckoutPage() {
       setPendingBankTransferOrder(number);
       return;
     }
+    notifyOrder(number);
     setOrderNumber(number);
     clearCart();
   };
@@ -163,6 +199,7 @@ export default function CheckoutPage() {
           phone={form.phone}
           email={form.email || undefined}
           onSuccess={() => {
+            notifyOrder(pendingAbaOrder);
             setOrderNumber(pendingAbaOrder);
             clearCart();
             setPendingAbaOrder(null);
@@ -176,6 +213,7 @@ export default function CheckoutPage() {
           orderNumber={pendingBankTransferOrder}
           amount={total}
           onConfirm={() => {
+            notifyOrder(pendingBankTransferOrder);
             setOrderNumber(pendingBankTransferOrder);
             clearCart();
             setPendingBankTransferOrder(null);
