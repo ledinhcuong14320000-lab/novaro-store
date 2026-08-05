@@ -34,7 +34,11 @@ export function Footer() {
             <h4 className="text-xs uppercase tracking-wider text-gold-light mb-4">{t("footer.contact")}</h4>
             <ul className="space-y-2 text-sm text-muted">
               <li>{t("footer.address")}</li>
-              <li>+855 12 345 678</li>
+              <li>
+                <a href="tel:+85570461350" className="hover:text-gold-light transition-colors">
+                  +855 70 461 350
+                </a>
+              </li>
               <li>hello@novaro.shop</li>
             </ul>
             <div className="mt-4">
